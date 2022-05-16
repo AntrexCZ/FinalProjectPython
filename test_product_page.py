@@ -6,6 +6,7 @@ from .pages.basket_page import BasketPage
 from .pages.login_page import LoginPage
 from .pages.product_page import ProductPage
 
+
 @pytest.mark.xfail(reason="wrong message")
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
@@ -79,4 +80,3 @@ class TestUserAddToBasketFromProductPage:
         product_page = ProductPage(browser, link)
         product_page.open()
         product_page.should_not_be_success_message()
-
