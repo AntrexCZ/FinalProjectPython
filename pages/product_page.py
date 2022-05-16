@@ -1,6 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
-from selenium.webdriver.common.by import By
+
 
 
 class ProductPage(BasePage):
@@ -33,7 +33,6 @@ class ProductPage(BasePage):
 
     def should_be_success_message(self):
         success_message = self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE).text
-        print(success_message)
         assert "has been added to your basket." in success_message, "Success message is not present"
 
     def should_not_be_success_message(self):
